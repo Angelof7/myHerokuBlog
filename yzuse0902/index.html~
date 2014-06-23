@@ -79,7 +79,7 @@
 							想念的时候就点击图片查看我们在哪吧！
 						</p>
 						<div id="banner">
-							<a href="images/#" class="mb" title="我们在全国各地"><img src="images/#" border="0"></a>
+							<a href="images/#" class="mb" title="我们在全国各地"><img src="images/se0902.jpg" border="0"></a>
 						</div>
 					</div>
 
@@ -215,7 +215,7 @@
 		<div id="footer">
 			<p>
 				(c) 2013-forever Created by <a
-				href="http://angelof7.github.io/">HuJiawei</a> using <a
+				href="http://angelof7.github.io/">Angelo</a> using <a
 				href="http://www.freecsstemplates.org">Free CSS Templates</a>.
 			</p>
 		</div>

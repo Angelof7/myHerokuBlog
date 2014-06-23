@@ -33,7 +33,25 @@ playOnce="false"
 
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090201.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_1.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs090201.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs090202.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -44,7 +62,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090202.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_2.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -55,7 +73,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090203.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_3.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -66,7 +84,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090204.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg  <font color="#ff0000"></font>-->
+<url>images/cs0902_4.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg  <font color="#ff0000"></font>-->
 
 </slide>
 
@@ -74,7 +92,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090205.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_5.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -85,7 +103,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090206.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_6.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -96,7 +114,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090207.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_7.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -110,7 +128,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090208.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_8.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -121,7 +139,7 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090209.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_9.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
@@ -132,10 +150,52 @@ playOnce="false"
 <slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
 <captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
 <captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
-<url>images/cs090210.JPG</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+<url>images/cs0902_10.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
 
 </slide>
 
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_10.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_10.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_11.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_12.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_13.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
+
+<slide media="image" swfThumb=""><!--only use swfThumb when inserting an swf file-->
+<captionTitle embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "160" tweenTo= "200" tweenDelay="1" ></captionTitle>
+<captionBody embedFont="true" tweenFrom="-20" Xpos = "50" Ypos = "190" tweenTo= "200" tweenDelay="0.5" width = "300"></captionBody>
+<url>images/cs0902_14.jpg</url><!--580 x 400--><!--example_swf.swf / assets/slideshow_pics/pic1.jpg-->
+
+</slide>
 
 <!--///////////////////////END SLIDES HERE///////////////////////////////////-->
 </main>
