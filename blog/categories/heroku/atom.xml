@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[I'm Angelo]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Heroku | I'm Angelo]]></title>
+  <link href="http://yoursite.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
   <updated>2014-07-19T19:38:59+08:00</updated>
   <id>http://yoursite.com/</id>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[重命名Heroku的app name]]></title>
+    <title type="html"><![CDATA[重命名Heroku的app Name]]></title>
     <link href="http://yoursite.com/blog/2014/07/19/zhong-ming-ming-herokude-app-name/"/>
     <updated>2014-07-19T15:29:06+08:00</updated>
     <id>http://yoursite.com/blog/2014/07/19/zhong-ming-ming-herokude-app-name</id>
