@@ -1,0 +1,270 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>oc内存管理学习 - VongLo's Dev Space</title>
+	<meta name="author" content="VongLo">
+
+	
+	<meta name="description" content="OC内存管理学习笔记">
+	<meta name="keywords" content="oc内存管理，wang9262，学习">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="360-site-verification" content="71c95173e5269a4d306def7ed27f2a48" />
+	<meta name="baidu-site-verification" content="GXlqZbIq3a" />
+	<link href="/atom.xml" rel="alternate" title="VongLo's Dev Space" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://wang9262.github.io/blog/2013/11/10/memory-manage/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
+	
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		document.write("<img src='/images/tx.png' alt='Profile Picture' style='width: 160px;' />");
+	</script>
+</div>
+<h1><a href="/">VongLo's Dev Space</a></h1>
+<p class="subtitle">寥寥浮生二十载,不求闻达<br>默默无闻，只求无愧于心</p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">所有文章</a></li>
+  <li><a href="/about">关于我</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    What makes you silent makes you silent.
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/3129068073" title="Weibo">Weibo</a>
+		
+		
+		
+		
+		
+		<a class="github" href="https://github.com/wang9262" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Oc内存管理学习</h1>
+	<div class="entry-content" itemprop="articleBody"><p>   本文是自己对内存管理方面的一些见解，由于接触oc时间不长，基础也不怎么牢靠，做起项目来也不能得心应手。于是就好好得看了别人的博客以及自己将不能理解的地方做了demo来解决自己以前一直有疑虑的地方。本文会持续更新，列出自己在学习过程中遇到的内存管理问题。</p>
+
+<!--more-->
+
+
+<h2>1.深浅拷贝</h2>
+
+<p>   首先是讲一讲深浅拷贝的问题，先看下表
+   <img class="left" src="/images/blogimg/copytable.png" width="409" height="140" title="image" alt="images"></p>
+
+<p>   从表中可以看出，对于任何对象(实现了NSCopying协议)调用copy方法（无论是可变还是不可变对象），将会返回不可变对象，调用mutableCopy将会返回可变对象，且产生新的对象，源对象引用计数不变。
+(实现NSCopying协议的- (id)copyWithZone:(NSZone *)zone 方法即可调用copy及mutableCopy)</p>
+
+<p>对不可变的对象调用copy方法(浅拷贝)，这时仅仅为指针拷贝，不会产生新的对象，源对象的引用计数将会加1，此时相当于retain。若此时改变了源对象的内容将不会影响到copy之后得到的对象的内容。如下例</p>
+
+<pre><code>NSString *string = [[NSString alloc] initWithFormat:@"age is %i", 10];
+NSLog(@"%zi", [string retainCount]);   //1
+NSString *str = [string copy];
+
+// string:0x10010bd80,str:0x10010bd80指针地址一致
+NSLog(@"string:%p,str:%p",string,str);
+NSLog(@"string:%zi", [string retainCount]);//2
+NSLog(@"str:%zi", [str retainCount]);//2
+
+//改变string的内容，此时没有alloc等操作，所以内存是不需自己管理
+string = @"xyz";
+
+//理论上为0，但是打印出来是-1，这个问题stackoverflow上面说
+//对一个引用计数为零的对象调用retainCount方法是不会得到正确的 
+//结果的。
+NSLog(@"string:%zi", [string retainCount]);   
+
+//string:0x1000025f0,str:0x10010bd80此时string的指针地
+//址发生改变，而str保持原来的指针原因是string指向的内容发生了
+//改变,即使此时将其内容改为和原来一样，即(string = @"age is 
+//10"),其指针还是发生了相应的变化，而不是保持为原来的。
+NSLog(@"string:%p,str:%p",string,str);
+
+//此时str的引用计数仍为2
+NSLog(@"str:%zi", [str retainCount]);
+
+//打印的结果：xyz,age is 10       
+NSLog(@"%@,%@",string,str);
+[str release];
+NSLog(@"str:%zi", [str retainCount]);//1
+[str release];
+
+//理论上为0，打印为随机数，理由同上
+NSLog(@"str:%zi", [str retainCount]);
+</code></pre>
+
+<p>由于水平有限，如果发现本文有问题，可以在评论中指出，谢谢！</p>
+</div>
+
+</article>
+
+	<div class="share">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_qzone"></a>
+<a href="http://www.jiathis.com/share?uid=1872349" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<!-- JiaThis Button END -->
+
+    
+    
+</div>
+
+
+	
+
+<DIV style="font-size:12px;BORDER-BOTTOM: #bbbbbb 1px solid; BORDER-LEFT: #bbbbbb 1px solid; BACKGROUND: #f6f6f6; HEIGHT: 120px; BORDER-TOP: #bbbbbb 1px solid; BORDER-RIGHT: #bbbbbb 1px solid" class=oec2003right> 
+<DIV style="MARGIN-TOP: 10px; FLOAT: left; MARGIN-LEFT: 5px; MARGIN-RIGHT: 10px"> 
+<IMG alt="" src="http://www.gravatar.com/avatar/f174b807078512e658f34796ff85c47d?s=160" width=100 height=100></DIV> 
+<DIV style="LINE-HEIGHT: 200%; MARGIN-TOP: 10px; COLOR: #000000"> 
+
+作者： <A href="http://wang9262.github.io">VongLo</A> <BR> 
+出处： <A href="http://wang9262.github.io">http://wang9262.github.io</A> 
+<BR>本文基于<a target="_blank" title="署名-非商业性使用-相同方式共享 3.0 中国大陆" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"> 
+署名-非商业性使用-相同方式共享 3.0 中国大陆</a>许可协议发布<br/>欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接以及作者（上方两项信息）否则：保留追究法律责任的权利。 
+</DIV></DIV> 
+
+
+<section>
+    <h1></h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-author-key=“1”></div>
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"wang9262"};
+    (function() {
+     var ds = document.createElement('script');
+     ds.type = 'text/javascript';ds.async = true;
+     ds.src = 'http://static.duoshuo.com/embed.js';
+     ds.charset = 'UTF-8';
+     (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+     })();
+    </script>
+<!-- Duoshuo Comment END --></div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014- 
+ <a href="/">VongLo</a>-
+  <span class="credit">Powered by <a href="http://octopress.org/">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			
+
+<script type="text/javascript">
+      var disqus_shortname = 'wang9262';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wang9262.github.io/blog/2013/11/10/memory-manage/';
+        var disqus_url = 'http://wang9262.github.io/blog/2013/11/10/memory-manage/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1872349" charset="utf-8"></script>
+
+<!-- GoStats JavaScript Based Code -->
+<script type="text/javascript" src="http://gostats.cn/js/counter.js"></script>
+<script type="text/javascript">_gos='monster.gostats.cn';_goa=469994;
+_got=7;_goi=3;_goz=0;_god='hits';_gol='';_GoStatsRun();</script>
+<noscript><a target="_blank" title="" 
+href="http://gostats.cn"><img alt="" 
+src="http://monster.gostats.cn/bin/count/a_469994/t_7/i_3/z_0/show_hits/counter.png" 
+style="border-width:0" /></a></noscript>
+<!-- End GoStats JavaScript Based Code -->
+
+		</div>
+	</div>
+</body>
+</html>

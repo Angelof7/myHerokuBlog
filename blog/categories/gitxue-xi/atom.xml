@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git学习 | VongLo's Dev Space]]></title>
+  <link href="http://wang9262.github.io/blog/categories/gitxue-xi/atom.xml" rel="self"/>
+  <link href="http://wang9262.github.io/"/>
+  <updated>2014-07-14T23:16:48+08:00</updated>
+  <id>http://wang9262.github.io/</id>
+  <author>
+    <name><![CDATA[VongLo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git学习笔记]]></title>
+    <link href="http://wang9262.github.io/blog/2013/12/01/git-study/"/>
+    <updated>2013-12-01T21:19:00+08:00</updated>
+    <id>http://wang9262.github.io/blog/2013/12/01/git-study</id>
+    <content type="html"><![CDATA[<p>   最近学习了一下git的基本命令，这篇文章是我自己的学习笔记，一来是为了分享，二来是为了以这种方式记下来，日后忘记时可以再来看看，本文会持续更新，把我在用git时遇到的问题以及一些比较好的建议记录下来，欢迎多多交流。</p>
+
+<!--more-->
+
+
+<p>
+<img src="/images/blogimg/git/git.png" alt="" /></p>
+
+<ol>
+<li><a href="#1">git的大致思路</a></li>
+<li><a href="#2">git的各种命令</a></li>
+<li><a href="#3">分支</a></li>
+<li><a href="#4">tag</a></li>
+<li><a href="#5">更新</a></li>
+<li><a href="#6">更多</a></li>
+</ol>
+
+
+<h3><a id="1"></a>git的大致思路</h3>
+
+<p>   git分三个区，一个是History（历史记录），Working Directory（工作目录）以及Stage（缓存区）也叫Index（索引）。大致结构如下图所示</p>
+
+<p>   <img src="/images/blogimg/git/threearea.png" alt="" /></p>
+
+<p>   <img src="/images/blogimg/git/gitmode.png" alt="" /></p>
+
+<p>   其中History可以看做是一根时间轴，上面布满了各种commit id，这些id都是hash生成的，可以不用去管它，理解成为标识符就好，如下图所示
+   <img src="/images/blogimg/git/timebar.png" alt="" /></p>
+
+<h3><a id="2"></a>git的各种基本命令</h3>
+
+<h4>2.1 add命令</h4>
+
+<p><code>git add filename</code>就是将当前工作路径下的filename文件添加到缓存区</p>
+
+<h4>2.2 commit命令</h4>
+
+<p><code>git commit -m ‘some commit info’</code>将某文件添加到缓存区后，在提交到历史记录，此时git会为你生成一个相应的commit id。</p>
+
+<h4>2.3 log以及reflog命令</h4>
+
+<p><code>git log</code>即查看提交日志，此时只有commit的记录没有头指针移动的记录如左图所示</p>
+
+<p><img src="/images/blogimg/git/gitlog.png" alt="" /></p>
+
+<p><code>git log --pretty=oneline</code>即以单行形式显示log日志，如图所示</p>
+
+<p><img src="/images/blogimg/git/onelinelog.png" alt="" /></p>
+
+<p><code>git reflog</code>即查看所有提交日志，以及其他的一些操作，简化了commit id
+<img src="/images/blogimg/git/reflog.png" alt="" /></p>
+
+<h4>2.4 回到上一次commit会回到指定的commit</h4>
+
+<p><code>git reset --hard head^</code>回到上一个commit节点，这个有点HEAD类似C语言的指针，可以指向不同的commit id。
+<code>git reset --hard commit_id(两杠之后无空格)</code>回到指定的commit节点（commit_id），这里的id时git reflog之后显示的commit id 并非log里面的id。</p>
+
+<h4>2.5 恢复某个修改的文件</h4>
+
+<p><code>git checkout -- fliename(两杠之后有空格)</code>，如果修改了某个文件，没有将其add到缓存区，调用该命令，可以恢复到修改之前的内容，即上一次commit之后的内容，如果这个时候已经add此语句无效，需要用下一语句。</p>
+
+<p><img src="/images/blogimg/git/check_noadd.png" alt="" /></p>
+
+<p><img src="/images/blogimg/git/check_noadd1.png" alt="" /></p>
+
+<p><code>git reset head filename</code>和<code>git checkout -- filename</code>如果修改之后并且已经add到缓存区，则可用这两个语句来恢复到修改之前的文件。<code>git reset head filename</code>相当于取消了add，即将该文件从缓存区中删除了，有一点需要注意一下就是无论你add多少次（没有commit的前提下），仅需一次reset即可取消所有的add.下图是我自己在做试验时的截图。</p>
+
+<p><img src="/images/blogimg/git/reset_add.png" alt="" /></p>
+
+<p><img src="/images/blogimg/git/reset_add1.png" alt="" /></p>
+
+<h4>2.6 删除</h4>
+
+<p><code>rm filename</code>从此盘中删除某个文件，该操作可通过<code>git checkout -- filename</code>来恢复。<code>git rm filename</code>是从git目录下删除文件，该操作是无法恢复的（不管有没有commit都不能恢复），只能通过通过头指针指向上一个commit节点（见上面2.4）来实现恢复。</p>
+
+<p><img src="/images/blogimg/git/disk_rm.png" alt="" /></p>
+
+<p><img src="/images/blogimg/git/git_rm.png" alt="" /></p>
+
+<h3><a id="3"></a>分支（Branch）</h3>
+
+<p>分支在git中扮演着重要的角色，尤其是对于分布式的相互协作。下面看一些常用的branch分支命令</p>
+
+<blockquote><ul>
+<li><code>git remote add origin git_address</code>为本地git添加远程服务器。</li>
+<li><code>git push -u origin(远程默认主分支) master(本地默认主分支)</code>第一次push加上<code>-u</code>指令，在以后的push中就可以直接push就行了</li>
+<li><code>git branch</code>查看当前所处分支（带星号代表当前分支）</li>
+<li><code>git branch branchname</code>创建新的分支</li>
+<li><code>git check branchname</code>分支之间的切换</li>
+<li><code>git checkout -b branchname</code>创建分支并直接切换到刚创建的分支，相当于上面两个命令的合并。</li>
+</ul>
+</blockquote>
+
+<p>在一个分支里面（非主分支）里面新建、修改文件，只要没有add,commit操作，切回主分支的时候是可以看到刚刚新建、修改的文件，一旦add，commit之后在主分支是不可见的</p>
+
+<h4>3.1 Merge（合并分支）命令</h4>
+
+<blockquote><ul>
+<li><code>git merge branchname</code>如果在主分支（master）下执行该命令，则直接合并master和branchname，master的头指针指向branchname的头指针（该操作并没有保存branchname，此时branchname和master相当于同一个分支）</li>
+<li><code>git merge --no-ff -m 'merge information ' branchname</code>如果在主分支（master）下执行该命令则保存dev且将dev和master合并，可以理解为相当于在master里面复制了一份dev(推荐这种操作)</li>
+</ul>
+</blockquote>
+
+<h4>3.2 删除分支</h4>
+
+<blockquote><ul>
+<li><code>git branch -d branchname</code>删除某个分支，无法恢复</li>
+<li><code>git branch -D branchname</code>强制删除</li>
+</ul>
+</blockquote>
+
+<h3><a id="4"></a>tag</h3>
+
+<blockquote><ul>
+<li><code>git tag tagname</code>创建tag</li>
+<li><code>git check tag</code>检查当前所有tag</li>
+<li><code>git push --tags</code>向远程提交tag</li>
+<li><code>git tag -d tagname</code>删除本地tag</li>
+<li><code>git push origin :refs/tags/tagname</code>删除远程tag</li>
+</ul>
+</blockquote>
+
+<h3><a id="5"></a>更新</h3>
+
+<h5>12月9号更新</h5>
+
+<hr />
+
+<h6>1.关于add和commit命令的合并</h6>
+
+<p>可用命令<code>git commit -am 'commit info'</code>但是该命令只能对已经存在的文件执行，若有新增文件，则git会报错。</p>
+
+<h6><a id="modify"></a>2.合并的问题</h6>
+
+<p>如果在某个分支上修改了某文件，然后add->commit，再回到主分支对同一文件进行修改，在add->commit，此时若进行合并，则会报错说修改有冲突，如果此时查看冲突，则可以看见如图所示的东西(Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，>>>>>>>标记出不同分支的内容)。</p>
+
+<p><img src="/images/blogimg/git/merge_modify.png" alt="" /></p>
+
+<p>所以应该手动来修改,冲突修改好后，add->commit即可。修改完成后，history大致如图所示,也可以用<code>git log --graph --pretty=oneline --abbrev-commit</code>来产看合并之后的图表</p>
+
+<p><img src="/images/blogimg/git/merge_pic.png" alt="" /></p>
+
+<h6>3.重开分支</h6>
+
+<p>假设现在在dev分支上将代码已经进行到一半了，突然想起有个很明显的bug，但是又不想放弃当前的代码修改，这时可以在当前分支用git stash命令来将当前工作现场隐藏起来，然后在主分支（或其他非dev分支）上新建分支来修复bug，修复完后合并到主分支，再转到dev分支
+可以通过以下两种方法来恢复之前隐藏的内容</p>
+
+<p><code>git stash apply</code>  恢复后，并没有删除stash隐藏的内容</p>
+
+<p><code>git stash pop</code>  恢复并删除stash隐藏的内容</p>
+
+<h6>4.远程推送</h6>
+
+<p>向远程端push分支，<code>git push origin branchname</code></p>
+
+<p>查看远程库信息 <code>git remote -v</code>
+<code>git checkout -b branchname origin/branchname</code> 在本地创建一个与远程分支名字一致的分支，然后可以修改分支内容然后向远程push.
+当远程库与本地库有冲突的时候，（即在不同的电脑上向远程库提交代码），需要先把远程库pull 下来，但是仅仅git pull是不够的
+因为没有指定本地分支与远程分支的链接。</p>
+
+<p>需要先执行<code>git branch --set-upstream branchname origin/branchname</code>,然后再执行git pull命令即可。如果此时有文件修改冲突，解决该冲突后在add commit 即可。此时再push到远程即可。这个和前面  <strong><em><a href="#modify">2.合并的问题</a></em></strong>  思路一致</p>
+
+<h6>5.git的个性化</h6>
+
+<p><code>git config --global color.ui true</code> // 显示颜色</p>
+
+<p><code>git config --global alias.st status</code> // 为status设置别名,也可以为其他命令设置别名 <code>git config --global alias.othername commandname</code></p>
+
+<p>也可以给一连串的命令设置别名.比如：<code>git config --global alias.unstage 'reset HEAD'</code>.</p>
+
+<p>更多的个性化可参考<a href="http://git-scm.com/book/zh/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git">7.1 自定义 Git &ndash; 配置 Git</a></p>
+
+<h3><a id="6"></a>更多</h3>
+
+<h5>各种dos/linux命令的解释</h5>
+
+<hr />
+
+<p><code>ls</code>查看当前路径下的文件（无隐藏文件）</p>
+
+<p><code>ls -a</code>查看当前路径下所有的文件（含隐藏文件）</p>
+
+<p><code>vi filename</code>用vim修改（或新建）文件（文件需带后缀，下同），进入vim后按下i键进入编辑模式，编辑完成按下esc，再输入<code>：wq</code>即可退出编辑模式</p>
+
+<p><code>cat filename</code>显示文件内容</p>
+
+<p><code>cat &gt;filename</code>只能创建新文件，不能编辑其内容</p>
+
+<p><code>cd ..</code>返回上级目录，<code>cd .</code>当前目录,<code>cd /</code>回到根目录</p>
+
+<p><code>pwd</code>查看当前目录的完整路径</p>
+
+<h5>参考资料：</h5>
+
+<blockquote><ul>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html">rogerdudler</a></li>
+<li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/">斯坦福大学</a></li>
+<li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html#checkout">marklodato</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰</a></li>
+</ul>
+</blockquote>
+]]></content>
+  </entry>
+  
+</feed>

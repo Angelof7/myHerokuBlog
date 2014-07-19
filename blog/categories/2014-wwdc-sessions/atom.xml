@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 2014-WWDC-Sessions | VongLo's Dev Space]]></title>
+  <link href="http://wang9262.github.io/blog/categories/2014-wwdc-sessions/atom.xml" rel="self"/>
+  <link href="http://wang9262.github.io/"/>
+  <updated>2014-07-14T23:16:48+08:00</updated>
+  <id>http://wang9262.github.io/</id>
+  <author>
+    <name><![CDATA[VongLo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Session 401:What's New In Xcode6]]></title>
+    <link href="http://wang9262.github.io/blog/2014/06/19/whats-new-in-xcode/"/>
+    <updated>2014-06-19T22:03:00+08:00</updated>
+    <id>http://wang9262.github.io/blog/2014/06/19/whats-new-in-xcode</id>
+    <content type="html"><![CDATA[<p>每年WWDC的召开,都是iOS开发者极为关注的事情,除了Session 101的Keynote上的关于新操作系统特性介绍,甚至新设备的发布,还有更多让开发者能够快速适应这些新特性的Sessions。本文是在观看过程中记录的一些笔记。这里是Session 401 What&rsquo;s New In Xcode。</p>
+
+<!--more-->
+
+
+<p></p>
+
+<ol>
+<li><a href="#1">新特性概览</a></li>
+<li><a href="#2">Swift</a></li>
+<li><a href="#3">Interface Builder</a></li>
+<li><a href="#4">visual debugging</a></li>
+<li><a href="#5">性能测试</a></li>
+</ol>
+
+
+<h2><a id="1"></a>1.新特性概览</h2>
+
+<ul>
+<li>可以使用Storyboard为OS X设计APP</li>
+<li>iOS在一个storyboard中设计iPhone和iPad应用，也可以自定义界面。</li>
+<li>如果使用自定义字体，可以在Interface Builder中设置。</li>
+<li>崭新的编辑器，比如Sprite Kit层级的编辑器，使场景可视化。</li>
+<li>崭新的本地化方式，到处所有本地化内容到XLIFF，得到翻译后将其导入Xcode，Xcode会自动帮你把翻译合并到项目中。</li>
+<li>iOS8开始对framework进行支持，可以通过添加关键字<code>@IBDesignale,@IBInspectable</code>设置IB Component。</li>
+<li>调试更加方便，View Debugging。</li>
+<li>Instruments有了全新的UI设计和新的工作流，更加简单地分析app性能。</li>
+<li>可以给Bot添加自定义行为。</li>
+<li>添加对XE Test Framework的支持，提高性能测试。</li>
+</ul>
+
+
+<h2><a id="2"></a>2.Swift</h2>
+
+<p>同一个Target下的所有Swift的类对彼此都是可见的，但是需要导入依赖的framework。</p>
+
+<p>在Swift文件中要使用OC中定义的类，导入
+相反，在OC文件中要使用Swift中的类，导入<code>"import APPName-Swift.h"</code>即可</p>
+
+<h2><a id="3"></a>3.Interface Builder</h2>
+
+<p>在视图渲染前调用<code>prepareForInterfaceBuilder()</code>方法，可以在该方法中添加一些视图设置代码。</p>
+
+<p><code>@IBInspectable</code>关键字使得Interface Builder自动生成一个可操作变量。设置断点，然后选中要检测的视图，在Editor->Debug Selected Views即可。</p>
+
+<p>选中storyboard，点击File Inspector 勾选 <code>Use Size Classes</code>。修改Size classes的storyboard，可以同时修改iPad和iPhone的界面，如果只想修改其中一个的界面，点击底部的中间部分<code>wAnyhAny</code>，选中某个尺寸(iPhone或者iPad)即可单独修改其中一个的界面而不影响另一个。实时预览可以点击右下角第三个菜单->update constraints即可，前提是已打开预览界面。</p>
+
+<h2><a id="4"></a>4.可视化调试(visual debugging)</h2>
+
+<p>运行程序，在相应位置设置断点，然后重新进入对应的IB，对自动运行到断点处，选中相应的视图对象，然后通过Xcode的<code>Quick Look</code>功能，即可实时预览该视图。</p>
+
+<p>在类中实现<code>- (id)debugQuickLookObject</code>方法，将想要在<code>Quick Look</code>中看到的东西作为该方法的返回值,然后Xcode会自动调用该方法来实现实时预览。</p>
+
+<p>调试栏多出一项<code>Debug View Hierarchy</code>功能，在调试的时候能够看到所有label、textField等等的内容及相关属性。调节左边的<code>slider bar</code>，可以将视图按层次分离，调节右边的<code>slider bar</code>可以隐藏前面层级的视图。选中某个视图，点击底部菜单栏第二个选项，即可查看该视图的约束(constraints)，同时Xcode会自动将其他无关的view全部隐藏。</p>
+
+<h2><a id="5"></a>5.性能测试</h2>
+
+<p>新建一个<code>Test Case Class</code>,将其添加到<code>Test Target</code>中，它将自动生成好几个方法，这里重点讲的是<code>testPerformanceExample()</code>这个方法。实现该方法后，点击侧边栏的菱形状按钮，即可查看所消耗的时间。同时可以设置一个时间的基准值，来判断app的性能是否达到预期效果。如果不达标，左边的菱形将会出现一个<code>小红×</code>。如果在测试代码中无法检测到的性能可以使用<code>Instrument</code>。</p>
+]]></content>
+  </entry>
+  
+</feed>

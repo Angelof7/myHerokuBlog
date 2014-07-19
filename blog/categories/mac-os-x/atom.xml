@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac-OS-X | VongLo's Dev Space]]></title>
+  <link href="http://wang9262.github.io/blog/categories/mac-os-x/atom.xml" rel="self"/>
+  <link href="http://wang9262.github.io/"/>
+  <updated>2014-07-14T23:16:48+08:00</updated>
+  <id>http://wang9262.github.io/</id>
+  <author>
+    <name><![CDATA[VongLo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[VM10装Mac OS X 10.9.3及更新到Mac OS X 10.10]]></title>
+    <link href="http://wang9262.github.io/blog/2014/06/06/install-mac-os-x-10-dot-10-by-vmare/"/>
+    <updated>2014-06-06T23:30:00+08:00</updated>
+    <id>http://wang9262.github.io/blog/2014/06/06/install-mac-os-x-10-dot-10-by-vmare</id>
+    <content type="html"><![CDATA[<p>最近WWDC放出终极大招——新的编程语言Swift(雨燕),导致一大波程序员的围观和跃跃欲试。当然了,工欲善其事,必先利其器,所以对于那些没有Mac又想要尝鲜的小伙伴肯定很为难。但是，请放心，本文教你如何在Windows下也能体验Mac的滋味，当然咯，最主要的还是体验新的语言Swift。好了话不多说，直接开始，贴图比较多，耐心等待图的刷出。</p>
+
+<!--more-->
+
+
+<p></p>
+
+<ol>
+<li><a href="#1">所需软件</a></li>
+<li><p><a href="#2">基本步骤</a></p>
+
+<p> 2.1. <a href="#2.1">虚拟机的安装</a></p>
+
+<p> 2.2. <a href="#2.2">插件安装</a></p>
+
+<p> 2.3.  <a href="#2.3">Mac OS X 10.9.3的安装</a></p>
+
+<p> 2.4.  <a href="#2.4">VMTool以及Darwin6.0.3的安装</a></p>
+
+<p> 2.5.  <a href="#2.5">设置共享文件夹</a></p>
+
+<p> 2.6 . <a href="#2.6">升级Mac OS X Yosemite</a></p>
+
+<p> 2.6.1.<a href="#2.6.1">升级方法1</a></p>
+
+<p> 2.6.2.<a href="#2.6.2">升级方法2</a></p></li>
+<li><a href="#3">其他的一些tips</a></li>
+<li><a href="#4">后续</a></li>
+<li><a href="#5">关于一些问题反馈的更新</a></li>
+</ol>
+
+
+<h2><a id="1"></a>一、所需软件</h2>
+
+<ul>
+<li><p><a href="http://pan.baidu.com/s/1gdwyIcj">VMware Workstation 10 及注册机</a></p></li>
+<li><p><a href="http://pan.baidu.com/s/1EPPh0">装Mac OS X插件</a></p></li>
+<li><p><a href="http://pan.baidu.com/s/1ntJTd49">Mac OS X 10.9.3镜像</a></p></li>
+<li><p><a href="http://yun.baidu.com/s/1sj6THFJ">10.10镜像 iso版</a></p></li>
+<li><p><a href="http://yun.baidu.com/s/1bniZGmz">10.10镜像 dmg版</a></p></li>
+<li><p><a href="http://pan.baidu.com/s/1ntyozI5">Xcode5.1.1</a></p></li>
+<li><p><a href="http://pan.baidu.com/s/1c0pdrOW">Xcode6 Beta</a></p></li>
+</ul>
+
+
+<p>基本上所用到的软件都在上面了，点击即可下载，下面开始进入正题。</p>
+
+<h2><a id="2"></a>二、基本步骤</h2>
+
+<h3><a id="2.1"></a>1.虚拟机的安装</h3>
+
+<p>下载上面的Vmare Workstation，以管理员身份运行，安装，一直下一步即可，别放C盘以免拖慢系统速度。VM安装好后，开始用注册机来激活，输入激活码即可。</p>
+
+<h3><a id="2.2"></a>2.插件安装</h3>
+
+<p>步骤一完成后，打开任务管理器，找到服务项，选择按名称排序，将框中四项全部停止运行。</p>
+
+<p><img src="/images/blogimg/vm/01.png" alt="" /></p>
+
+<p>然后打开下载的插件，解压<code>unlock-all-v120.zip</code>文件，找到<code>
+unlock-all-v120\windows\install.cmd</code>，右键以管理员身份运行，等待运行完即可。</p>
+
+<h3><a id="2.3"></a>3.Mac OS X 10.9.3的安装</h3>
+
+<p>相信你以上步骤已做好了，开启下面旅程吧。基本都是图片，所以很容易，just follow。</p>
+
+<p><img src="/images/blogimg/vm/02.png" alt="" />
+<img src="/images/blogimg/vm/03.png" alt="" />
+<img src="/images/blogimg/vm/04.png" alt="" />
+<img src="/images/blogimg/vm/05.png" alt="" />
+<img src="/images/blogimg/vm/06.png" alt="" />
+<img src="/images/blogimg/vm/07.png" alt="" />
+<img src="/images/blogimg/vm/08.png" alt="" />
+<img src="/images/blogimg/vm/09.png" alt="" />
+<img src="/images/blogimg/vm/10.png" alt="" />
+<img src="/images/blogimg/vm/11.png" alt="" />
+<img src="/images/blogimg/vm/12.png" alt="" />
+<img src="/images/blogimg/vm/13.png" alt="" />
+<img src="/images/blogimg/vm/14.png" alt="" />
+<img src="/images/blogimg/vm/15.png" alt="" />
+<img src="/images/blogimg/vm/16.png" alt="" />
+<img src="/images/blogimg/vm/17.png" alt="" />
+<img src="/images/blogimg/vm/18.png" alt="" />
+<img src="/images/blogimg/vm/19.png" alt="" />
+<img src="/images/blogimg/vm/20.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/21.png" alt="" /></p>
+
+<p>然后出现苹果标志，稍等片刻，会出现语言选择，选择简体中文再下一步</p>
+
+<p><img src="/images/blogimg/vm/22.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/23.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/24.png" alt="" /></p>
+
+<p>然后点击左上角的<code>磁盘工具</code>，选择<code>退出磁盘工具</code>。然后在安装界面点击<code>继续</code>,再点击<code>安装</code></p>
+
+<p><img src="/images/blogimg/vm/25.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/26.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/27.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/28.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/29.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/30.png" alt="" /></p>
+
+<p><img src="/images/blogimg/vm/31.png" alt="" /></p>
+
+<p>安装完成，直接重启即可。至此，所有的安装步骤都完成了。</p>
+
+<h3><a id="2.4"></a>4.VMTool以及Darwin6.0.3的安装</h3>
+
+<p><img src="/images/blogimg/vm/32.png" alt="" />
+<img src="/images/blogimg/vm/33.png" alt="" />
+<img src="/images/blogimg/vm/34.png" alt="" />
+<img src="/images/blogimg/vm/35.png" alt="" />
+<img src="/images/blogimg/vm/36.png" alt="" />
+<img src="/images/blogimg/vm/37.png" alt="" />
+<img src="/images/blogimg/vm/38.png" alt="" /></p>
+
+<h3><a id="2.5"></a>5.设置共享文件夹</h3>
+
+<p><img src="/images/blogimg/vm/39.png" alt="" />
+<img src="/images/blogimg/vm/40.png" alt="" /></p>
+
+<p>共享文件夹的说明：由于虚拟机无法访问本机的硬盘，所以需要设置共享文件夹来方便虚拟机读取电脑的物理内存。</p>
+
+<h3><a id="2.6"></a>6.升级Mac OS X Yosemite</h3>
+
+<p>关于10.10 iso版需要说明一下,需将文件夹中两个文件都下载,两个都下载完后才能解压,解压<code>OS X 10.10 DP1 14A238x.zip</code>即可,<code>OS X 10.10 DP1 14A238x.z01</code>可以不用管,这是由于百度网盘上传文件大小设置,所以我将其切割成了两份。</p>
+
+<h4><a id="2.6.1"></a>升级方法1</h4>
+
+<p>下载10.10的iso镜像文件，将CD弹出，设置为10.10的镜像文件，然后连接CD即可，类似VMTool的安装。直接点击安装或下一步即可。</p>
+
+<h4><a id="2.6.2"></a>升级方法2</h4>
+
+<p>下载10.10的dmg镜像文件,将其拷入之前设置的共享文件夹内,然后在虚拟机中找到该dmg,双击运行即可。</p>
+
+<h2><a id="3"></a>三、其他的一些tips</h2>
+
+<p>当然你也可以直接装10.10(没有亲测),按照装10.9.3得步骤,应该也是可以的.可以尝试下,如果不能安装,可以再从10.9.3升级.如果直接安装,一定要用iso文件,很多人反馈说开启虚拟机就直接黑屏,主要是因为用的dmg镜像文件所导致。</p>
+
+<p>当再次打开虚拟机时，发现进入的是下面界面</p>
+
+<p><img src="/images/blogimg/vm/41.png" alt="" /></p>
+
+<p>之前装好的虚拟机不见了，不要着急,按照下图设置即可</p>
+
+<p><img src="/images/blogimg/vm/42.png" alt="" /></p>
+
+<p>是不是又出现了,接下来就尽情的玩耍吧，Xcode 6 是必不可少的啦。在安装的过程中,由于电脑配置等原因,安装的时间不一,所以大家要耐心等待下。</p>
+
+<h2><a id="4"></a>四、后续</h2>
+
+<p>我的电脑是win8，但是win7步骤基本一致，没有太大区别。还有一个就是AMD的貌似安装不了，只能intel的，如果你有好的方法，也可以分享下。如果你有疑问可在下面留言，也可以Email我。Have fun！</p>
+
+<h2><a id="5"></a>五、关于一些问题反馈的更新</h2>
+
+<p>经<a href="http://weibo.com/u/1697190022">@sinaguomq</a>反馈,当出现下列问题时</p>
+
+<blockquote><p>二进制转换不支持用于 Mac OS X。要运行 Mac OS X，您需要一台 VMware Workstation 支持 Intel VT-x 或 AMD-V 的主机。 按着楼主的步骤一步一步来的，选择 开启此虚拟机 时弹出此错误。</p>
+
+<blockquote><p>解决方法如下(处理器是intel)：
+按 F10 键以配置 BIOS
+使用箭头键滚动到“
+onfiguration”
+选择“Virtualization Technology”，然后按 Enter 键
+选择“Enabled”，然后按 Enter 键
+按 F10 键以保存并退出
+选择“Yes”，然后按 Enter 键
+完全关机（关闭电源），等待几秒钟，然后重新启动计算机</p></blockquote></blockquote>
+
+<p>由于把所有东西都上传到百度网盘了,电脑上的就删了.忘了贴出hash码,经网友提醒将他得到的hash贴出来</p>
+
+<blockquote><p>Mavercisk_Install_10.9.3_13D65_2.cdr</p>
+
+<p>SHA1: E19BC6B5727699BF2A637D0102C89CC25CF37E67</p>
+
+<p>OS X 10.10 DP1 14A238x.dmg</p>
+
+<p>SHA1: 2E07E0C1864FD9015FFB04A436589D2E85D7EFEB</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
