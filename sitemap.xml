@@ -1,59 +1,21 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-    <url>
-        <loc>http://wang9262.github.io/blog/2013/11/10/memory-manage/</loc>
-        <lastmod>2014-01-16T17:51:55+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2013/12/01/git-study/</loc>
-        <lastmod>2013-12-09T11:11:47+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/03/01/stanford-ios7-learning/</loc>
-        <lastmod>2014-06-08T01:22:33+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/03/20/interview-of-netease-in-hangzhou/</loc>
-        <lastmod>2014-06-08T11:03:09+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/06/06/install-mac-os-x-10-dot-10-by-vmare/</loc>
-        <lastmod>2014-07-07T17:56:58+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/06/19/whats-new-in-xcode/</loc>
-        <lastmod>2014-06-22T10:09:31+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/06/19/swift/</loc>
-        <lastmod>2014-06-21T23:35:56+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/2014/06/21/recent-thoughts/</loc>
-        <lastmod>2014-06-21T23:42:22+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/404.html</loc>
-        <lastmod>2013-12-10T19:39:00+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/about/</loc>
-        <lastmod>2014-05-09T21:58:40+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/archives/</loc>
-        <lastmod>2014-07-07T17:56:58+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/blog/categories/</loc>
-        <lastmod>2013-11-10T13:24:16+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/</loc>
-        <lastmod>2014-07-07T17:56:58+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://wang9262.github.io/robots.txt</loc>
-        <lastmod>2013-11-10T12:38:57+08:00</lastmod>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  
+  <url>
+    <loc>http://yoursite.com/blog/archives/</loc>
+    <lastmod>2014-07-19T13:58:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/</loc>
+    <lastmod>2014-07-19T13:58:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
 </urlset>
