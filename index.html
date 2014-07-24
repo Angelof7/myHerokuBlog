@@ -7,7 +7,10 @@
 	<meta name="author" content="GaoChao">
 
 	
-	<meta name="description" content="Jul 24th, 2014 Mac下卸载Mysql Jul 24th, 2014 Mac下Ruby on Rails环境配置并部署Redmine Jul 24th, 2014 使用CAS在Tomcat中实现单点登录 Jul 19th, 2014 centos, redmine, ruby &hellip;">
+	<meta name="description" content="Jul 24th, 2014 mac, mysql Mac下卸载Mysql sudo rm /usr/local/mysql
+sudo rm -rf /usr/local/mysql*
+sudo rm -rf /Library/StartupItems/MySQLCOM
+sudo rm -rf &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,12 +108,24 @@
 <time datetime="2014-07-24T13:17:43+08:00" data-updated="true" itemprop="datePublished">Jul 24<sup>th</sup>, 2014</time></div>
 		<div class="tags">
 
+
+	<a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/mysql/'>mysql</a>
+
+
 </div>
 		
 	</div>
 	<h1 class="title" itemprop="name"><a href="/blog/2014/07/24/macxia-xie-zai-mysql/" itemprop="url">Mac下卸载Mysql</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		
+		<p><code>sudo rm /usr/local/mysql</code>
+<code>sudo rm -rf /usr/local/mysql*</code>
+<code>sudo rm -rf /Library/StartupItems/MySQLCOM</code>
+<code>sudo rm -rf /Library/PreferencePanes/My*</code>
+<code>vim /etc/hostconfig (and remove the line MYSQLCOM=-YES-)</code>
+<code>rm -rf ~/Library/PreferencePanes/My*</code>
+<code>sudo rm -rf /Library/Receipts/mysql*</code>
+<code>sudo rm -rf /Library/Redeipts/MySQL*</code>
+<code>sudo rm -rf /var/db/receipts/com.mysql.*</code></p>
 
 		
 		

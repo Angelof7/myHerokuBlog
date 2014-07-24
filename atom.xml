@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Angelo]]></title>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-07-24T13:17:58+08:00</updated>
+  <updated>2014-07-24T13:27:03+08:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[GaoChao]]></name>
@@ -18,7 +18,15 @@
     <link href="http://yoursite.com/blog/2014/07/24/macxia-xie-zai-mysql/"/>
     <updated>2014-07-24T13:17:43+08:00</updated>
     <id>http://yoursite.com/blog/2014/07/24/macxia-xie-zai-mysql</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p><code>sudo rm /usr/local/mysql</code>
+<code>sudo rm -rf /usr/local/mysql*</code>
+<code>sudo rm -rf /Library/StartupItems/MySQLCOM</code>
+<code>sudo rm -rf /Library/PreferencePanes/My*</code>
+<code>vim /etc/hostconfig (and remove the line MYSQLCOM=-YES-)</code>
+<code>rm -rf ~/Library/PreferencePanes/My*</code>
+<code>sudo rm -rf /Library/Receipts/mysql*</code>
+<code>sudo rm -rf /Library/Redeipts/MySQL*</code>
+<code>sudo rm -rf /var/db/receipts/com.mysql.*</code></p>
 ]]></content>
   </entry>
   

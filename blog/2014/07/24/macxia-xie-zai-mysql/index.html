@@ -7,7 +7,10 @@
 	<meta name="author" content="GaoChao">
 
 	
-	<meta name="description" content=" Mac下卸载Mysql Comments Please enable JavaScript to view the comments powered by Disqus. ">
+	<meta name="description" content="Mac下卸载Mysql sudo rm /usr/local/mysql
+sudo rm -rf /usr/local/mysql*
+sudo rm -rf /Library/StartupItems/MySQLCOM
+sudo rm -rf /Library/PreferencePanes/ &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +89,15 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 	<h1 class="title" itemprop="name">Mac下卸载Mysql</h1>
-	<div class="entry-content" itemprop="articleBody">
+	<div class="entry-content" itemprop="articleBody"><p><code>sudo rm /usr/local/mysql</code>
+<code>sudo rm -rf /usr/local/mysql*</code>
+<code>sudo rm -rf /Library/StartupItems/MySQLCOM</code>
+<code>sudo rm -rf /Library/PreferencePanes/My*</code>
+<code>vim /etc/hostconfig (and remove the line MYSQLCOM=-YES-)</code>
+<code>rm -rf ~/Library/PreferencePanes/My*</code>
+<code>sudo rm -rf /Library/Receipts/mysql*</code>
+<code>sudo rm -rf /Library/Redeipts/MySQL*</code>
+<code>sudo rm -rf /var/db/receipts/com.mysql.*</code></p>
 </div>
 
 </article>
