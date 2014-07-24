@@ -4,7 +4,7 @@
   <title><![CDATA[I'm Angelo]]></title>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-07-19T20:26:16+08:00</updated>
+  <updated>2014-07-24T13:17:58+08:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[GaoChao]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下卸载Mysql]]></title>
+    <link href="http://yoursite.com/blog/2014/07/24/macxia-xie-zai-mysql/"/>
+    <updated>2014-07-24T13:17:43+08:00</updated>
+    <id>http://yoursite.com/blog/2014/07/24/macxia-xie-zai-mysql</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac下Ruby on Rails环境配置并部署Redmine]]></title>
+    <link href="http://yoursite.com/blog/2014/07/24/macxia-ruby-on-railshuan-jing-pei-zhi-bing-bu-shu-redmine/"/>
+    <updated>2014-07-24T13:17:06+08:00</updated>
+    <id>http://yoursite.com/blog/2014/07/24/macxia-ruby-on-railshuan-jing-pei-zhi-bing-bu-shu-redmine</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用CAS在Tomcat中实现单点登录]]></title>
+    <link href="http://yoursite.com/blog/2014/07/24/shi-yong-caszai-tomcatzhong-shi-xian-dan-dian-deng-lu/"/>
+    <updated>2014-07-24T13:15:57+08:00</updated>
+    <id>http://yoursite.com/blog/2014/07/24/shi-yong-caszai-tomcatzhong-shi-xian-dan-dian-deng-lu</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CentOs下配置Ruby on Rails开发环境并部署Redmine]]></title>

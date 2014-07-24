@@ -3,6 +3,24 @@
   
   
   <url>
+    <loc>http://yoursite.com/blog/2014/07/24/macxia-xie-zai-mysql/</loc>
+    <lastmod>2014-07-24T13:17:43+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/blog/2014/07/24/macxia-ruby-on-railshuan-jing-pei-zhi-bing-bu-shu-redmine/</loc>
+    <lastmod>2014-07-24T13:17:06+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/blog/2014/07/24/shi-yong-caszai-tomcatzhong-shi-xian-dan-dian-deng-lu/</loc>
+    <lastmod>2014-07-24T13:15:57+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/blog/2014/07/19/centosxia-pei-zhi-ruby-on-railskai-fa-huan-jing-bing-bu-shu-redmine/</loc>
     <lastmod>2014-07-19T20:23:18+08:00</lastmod>
     <priority>0.8</priority>
@@ -17,21 +35,21 @@
   
   <url>
     <loc>http://yoursite.com/blog/archives/</loc>
-    <lastmod>2014-07-19T20:26:16+08:00</lastmod>
+    <lastmod>2014-07-24T13:17:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2014-07-19T20:26:16+08:00</lastmod>
+    <lastmod>2014-07-24T13:17:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/about/</loc>
-    <lastmod>2014-07-19T20:26:16+08:00</lastmod>
+    <lastmod>2014-07-24T13:17:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
